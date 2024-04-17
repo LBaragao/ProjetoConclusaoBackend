@@ -4,8 +4,19 @@ const cors = require('cors');
 const app = express();
 
 var corOptions = {
-  origin: 'https://localhost:8081'
-}
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+    'PUT',
+    'DELETE'
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
 
 
 //middleware

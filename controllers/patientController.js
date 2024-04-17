@@ -8,7 +8,7 @@ const Vaccination = db.vaccination
 // main work
 
 
-// 1. createpatient
+// 1. create patient
 
 const addPatient = async (req, res) => {
 
@@ -44,8 +44,8 @@ const getAllPatients = async (req, res) => {
 
 const getOnePatient = async (req, res) => {
 
-  let patient_Id = req.params.patient_Id
-  let patients = await Patient.findOne({ where: {patient_Id : patient_Id}})
+  let cpf = req.params.cpf
+  let patients = await Patient.findOne({ where: {cpf : cpf}})
   res.status(200).send(patients)
 }
 
@@ -54,9 +54,9 @@ const getOnePatient = async (req, res) => {
 
 const updatePatient = async (req, res) => {
 
-  let patient_Id = req.params.patient_Id
+  let cpf = req.params.cpf
   
-  const patient = await Patient.update(req.body, {where: {patient_Id: patient_Id}})
+  const patient = await Patient.update(req.body, {where: {cpf: cpf}})
 
   res.status(200).send(patient)
 }

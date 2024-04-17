@@ -6,9 +6,9 @@ router.post('/addPatient', patientController.addPatient)
 
 router.get('/allPatients', patientController.getAllPatients)
 
-router.get('/:patient_Id', patientController.getOnePatient)
+router.get('/:cpf', patientController.getOnePatient)
 
-router.put('/:patient_Id', patientController.updatePatient)
+router.put('/:cpf', patientController.updatePatient)
 
 router.delete('/:patient_Id', patientController.deletePatient)
 
