@@ -10,6 +10,6 @@ router.get('/:cpf', patientController.getOnePatient)
 
 router.put('/:cpf', patientController.updatePatient)
 
-router.delete('/:patient_Id', patientController.deletePatient)
+router.delete('/:cpf', patientController.deletePatient)
 
 module.exports = router

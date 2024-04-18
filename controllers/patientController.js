@@ -66,9 +66,9 @@ const updatePatient = async (req, res) => {
 
 const deletePatient = async (req, res) => {
 
-  let patient_Id = req.params.patient_Id
-  await Patient.destroy({ where: { patient_Id: patient_Id}})
-  res.status(200).send('Paciente excluido')
+  let cpf = req.params.cpf
+  await Patient.destroy({ where: { cpf: cpf}})
+  res.status(200).json({ success: true, message: 'Paciente excluído com sucesso' })
 }
 
 module.exports = {
