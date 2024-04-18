@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-
+process.env.TZ = 'America/Sao_Paulo';
 const app = express();
 
 var corOptions = {
