@@ -30,8 +30,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // routers
 
-const router = require('./routes/patientRoutes.js')
-app.use('/api/patients', router)
+const patientRouter = require('./routes/patientRoutes.js')
+app.use('/api/patients', patientRouter)
+
+const vaccineRouter = require('./routes/vaccineRoutes.js')
+app.use('/api/vaccines', vaccineRouter)
 
 
 //testing api
