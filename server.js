@@ -36,6 +36,10 @@ app.use('/api/patients', patientRouter)
 const vaccineRouter = require('./routes/vaccineRoutes.js')
 app.use('/api/vaccines', vaccineRouter)
 
+const vaccinationRouter = require('./routes/vaccinationRoutes.js')
+app.use('/api/vaccination', vaccinationRouter)
+
+
 
 //testing api
 
