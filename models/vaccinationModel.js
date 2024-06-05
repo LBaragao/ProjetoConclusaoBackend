@@ -4,7 +4,7 @@ const { sequelize } = require(".");
 module.exports = (sequelize, DataTypes) => {
 
   const Vaccination = sequelize.define("vaccination", {
-    vaccinationId: {
+    vaccination_Id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
@@ -13,17 +13,17 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    first_application: {
+    application_date: {
       type: DataTypes.DATEONLY,
       allowNull: false
     },
-    last_application: {
-      type: DataTypes.DATEONLY,
+    patient_Id: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
-    campaign: {
-      type: DataTypes.STRING,
-      allowNull: true
+    vaccine_Id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   })
 
