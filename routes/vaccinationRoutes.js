@@ -4,8 +4,8 @@ const router = require('express').Router()
 
 router.post('/addApplication', vaccinationController.addApplication)
 
-router.get('/getPatientAllApplications', vaccinationController.getPatientAllApplications)
+router.get('/patient/:patient_Id', vaccinationController.getPatientAllApplications)
 
-router.get('/getVaccineAllApplications', vaccinationController.getVaccineAllApplications)
+router.get('/vaccine/:vaccine_Id', vaccinationController.getVaccineAllApplications)
 
 module.exports = router
