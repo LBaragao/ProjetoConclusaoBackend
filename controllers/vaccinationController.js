@@ -1,4 +1,6 @@
 const db = require('../models')
+const patientModel = require('../models/patientModel')
+const vaccineModel = require('../models/vaccineModel')
 
 // create main Model
 const Patient = db.patient
@@ -29,8 +31,19 @@ const addApplication = async (req, res) => {
 const getPatientAllApplications = async (req, res) => {
 
   let patient_Id = req.params.patient_Id
-  let applications = await Vaccination.findAll({ where: {patient_Id : patient_Id}})
-  res.status(200).send(applications)
+  try {
+    let applications = await Vaccination.findAll({ 
+      where: {patient_Id : patient_Id},
+      include: [
+        {model: Patient},
+        {model: Vaccine}
+      ]
+    })
+    res.status(200).send(applications)
+  } catch (err) {
+    res.status(500).send(err.message)
+  }
+  
 }
 
 
@@ -39,8 +52,19 @@ const getPatientAllApplications = async (req, res) => {
 const getVaccineAllApplications = async (req, res) => {
 
   let vaccine_Id = req.params.vaccine_Id
-  let applications = await Vaccination.findAll({ where: {vaccine_Id : vaccine_Id}})
+  try {
+    let applications = await Vaccination.findAll({
+      where: {vaccine_Id : vaccine_Id},
+      include: [
+        {model: Patient},
+        {model: Vaccine}
+      ]
+    })
   res.status(200).send(applications)
+  } catch (err) {
+    res.status(500).send(err.message)
+  }
+  
 }
 
 
